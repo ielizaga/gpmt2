@@ -35,7 +35,8 @@ type logOptions struct {
 // Local Package Variables
 var (
 	// gp_log_collector flags
-	lcOpts LogCollectorOptions
+	lcOpts       LogCollectorOptions
+	packcoreOpts PackcoreOptions
 
 	// DB connection details
 	connString db.ConnString //FIXME/TODO: Do we need a separate wrapper for DB?
@@ -99,6 +100,8 @@ func init() {
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(logCollectorCmd)
 	flagsLogCollector()
+	rootCmd.AddCommand(packcoreCmd)
+	flagsPackcore()
 
 }
 
